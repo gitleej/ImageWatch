@@ -20,6 +20,19 @@
 # 2 打包
 
 ```shell
+pyside6-deploy.exe .\main.py
+# 修改生成的spec文件中的nuitka模块，取消控制台窗口
+# [nuitka]
+# # 可选: 指定 standalone（生成带依赖的目录）或 onefile（打包成单文件）
+# # 推荐 standalone 来避免 onefile 的短暂解包 / 闪烁与调试困难
+# mode = standalone
+
+# # 关键：传给 Nuitka 的额外参数
+# # 1) 禁用控制台（Windows GUI 程序）：--windows-disable-console
+# # 2) 把图标传给 Nuitka（可选）：--windows-icon-from-ico=<path-to-ico>
+# # 3) 保留原有 quiet/noinclude 的设置
+# extra_args = --quiet --noinclude-qt-translations --windows-disable-console --windows-icon-from-ico=C:\anaconda3\envs\openmmlab-pyqt-py38\Lib\site-packages\PySide6\scripts\deploy_lib\pyside_icon.ico
+
 pyside6-deploy.exe -c .\pysidedeploy.spec
 ```
 
