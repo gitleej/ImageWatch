@@ -1,6 +1,6 @@
 # 仿Visual Studio OpenCV 插件Image Watch
 
-![image-20251016100805917](C:\Users\TK\AppData\Roaming\Typora\typora-user-images\image-20251016100805917.png)
+![image-20251016100805917](.\doc\image-20251016100805917.png)
 
 # 0 功能
 
