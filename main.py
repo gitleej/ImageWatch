@@ -300,8 +300,15 @@ class GraphicsImageView(QGraphicsView):
         scaled = sub.scaled(target_w, target_h, Qt.IgnoreAspectRatio, Qt.FastTransformation)
         pix = QPixmap.fromImage(scaled)
         painter = QPainter(pix)
-        font = QFont("Consolas")
-        font.setPixelSize(FONT_PIXEL)
+        # font = QFont("Consolas")
+        # font.setPixelSize(FONT_PIXEL)
+        # painter.setFont(font)
+        if self._is_grayscale:
+            font = QFont("Consolas")
+            font.setPixelSize(FONT_PIXEL * 2)
+        else:
+            font = QFont("Consolas")
+            font.setPixelSize(FONT_PIXEL)
         painter.setFont(font)
         fm = painter.fontMetrics()
         # 使用 self._is_grayscale 决定每像素显示行数
